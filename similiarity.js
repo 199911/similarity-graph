@@ -73,7 +73,7 @@ var SimiliarityGraph = (function() {
                 .linkDistance(function(edge) {
                     var union = edge.union;
                     var inter = edge.intersection;
-                    return 95*(union-inter)/union + 5;                    
+                    return 145*(union-inter)/union + 5;                    
                 })
                 .gravity(0.02)
                 .size([this.width, this.height]);
@@ -104,7 +104,7 @@ var SimiliarityGraph = (function() {
                 .attr("class", "edge")
                 .style("stroke", "#999999")
                 .style("stroke-width", function(d) { 
-                    return Math.sqrt(d.intersection); 
+                    return d.intersection; 
                 })
             return this.edges = edges;
         },
